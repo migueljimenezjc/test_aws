@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const port = 3000;
+const address = 'localhost';
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -38,6 +40,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(3000, () => { console.log("API"); })
+
+app.listen(port, address, () => {  console.log('server started listening at ', port); });
 
 module.exports = app;
